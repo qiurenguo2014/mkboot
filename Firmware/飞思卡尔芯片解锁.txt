@@ -1,0 +1,22 @@
+Kinetis 芯片解锁方法如下：
+Step 1: 确认使用的开发工具IAR的版本为6.3以上（本人电脑是IAR6.30和keil 4.60都安装了）
+ 
+Step 2: 安装JLINK仿真驱动Setup_JLinkARM_V436.zip
+下载地址：http://www.segger.com/download_jlink.html
+ 
+Step 3: 将本帖子的附件包 的 erase_all_pin.jlk 拷 贝 到 你的Setup_JLinkARM_V436安装目录
+win7 32位默认是“C:\Program Files\SEGGER\JLinkARM_V436e” directory (Installation folder for
+your Segger JLink ARM)
+win7 64位默认是“C:\Program Files (x86)\SEGGER\JLinkARM_V436e”（本人是win7 64位系统）
+ 
+Step 4: 将Kinetis芯片的reset pin按键按下不动
+ 
+Step 5: 将Kinetis芯片的开发板上电
+ 
+Step 6: 在 PC 机 的 cmd 命 令 中 ， 进入控制台模式下
+输入：命令一：【cd C:\Program Files (x86)\SEGGER\JLinkARM_V436e】->回车键
+      命令二：【jlink.exe erase_all_pin.jlk】->回车键
+
+
+在命令行J-LINK安装目录下运行 jlink.exe erase_all_pin.jlk
+

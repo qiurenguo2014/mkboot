@@ -1,0 +1,24 @@
+配置信息
+MCU:MK20D10测试
+目前使用JTAG复用管脚的串口及一个IO口,
+注意一旦写入boot程序要使用JTAG需要先解锁。
+
++--+-1 - Vcc
+|  |-2 -
+ + |-3 - TCK
+|  |-4 - TMS  -  BOOT_IO  - PA3
+|  |-5 - TDI  -  UART0_RX - PA2
+ + |-6 - TDO  -  UART0_TX - PA1
+|  |-7 - RST
++--+-8 - GND
+
+UART0 8位 无校验 115200波特率
+使用YMODEM模式传输BIN文件
+
+
+16:53 2014-1-6
+创建Mk20d10_Boot_V1.01版本。
+进入烧写条件:
+1、全局擦除，第一次写如BOOT，API区域为空，BOOT自动进入烧写模式。
+2、上电置低BOOT_IO进入烧写模式。
+3、API进入BOOT。
